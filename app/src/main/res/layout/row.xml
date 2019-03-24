@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="30dp"
+    android:layout_height="80dp">
+
+
+    <ImageView
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:id="@+id/userImage"
+        android:background="@drawable/ic_account_box_black_24dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Bİlal"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:id="@+id/name"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/userImage"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/telephone"
+        android:text="050102012"
+        android:textColor="@color/black"
+        android:layout_below="@id/name"
+        android:layout_toRightOf="@id/userImage"
+        android:layout_marginLeft="30dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_width="70dp"
+        android:text="Hafta 1"
+        android:id="@+id/weekOne"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_height="30dp" />
+    <TextView
+        android:layout_width="70dp"
+        android:id="@+id/weekTwo"
+        android:text="Hafta 2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/weekOne"
+        android:layout_height="30dp" />
+    <TextView
+        android:layout_width="70dp"
+        android:layout_marginLeft="20dp"
+        android:text="Hafta 3"
+        android:layout_below="@id/weekOne"
+        android:id="@+id/weekTh"
+        android:layout_toLeftOf="@id/weekOne"
+        android:layout_height="30dp" />
+    <TextView
+        android:layout_width="70dp"
+        android:text="Hafta 4"
+        android:id="@+id/weekFo"
+        android:layout_toLeftOf="@id/weekTwo"
+        android:layout_height="30dp" />
+
+</RelativeLayout>

@@ -44,39 +44,37 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
-
-
     private void takeNewPhoto() {
-        Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(takePhotoIntent, IMAGE_ACTION_CODE);
-    }
+                Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(takePhotoIntent, IMAGE_ACTION_CODE);
+            }
 
-    private void recordNewVideo() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        startActivityForResult(takePictureIntent, VIDEO_ACTION_CODE);
-    }
+            private void recordNewVideo() {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                startActivityForResult(takePictureIntent, VIDEO_ACTION_CODE);
+            }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+            @Override
+            protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+                super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode != RESULT_OK) return;
+                if(resultCode != RESULT_OK) return;
 
-        switch (requestCode) {
-            case VIDEO_ACTION_CODE :
-                VideoView videoView = ((VideoView) findViewById(R.id.videoPreview));
-                videoView.setVideoURI(data.getData());
-                videoView.setMediaController(new MediaController(this));
-                videoView.requestFocus();
-                videoView.start();
-                break;
+                switch (requestCode) {
 
-            case IMAGE_ACTION_CODE :
-                Bundle extras = data.getExtras();
-                ((ImageView) findViewById(R.id.imagePreview)).setImageBitmap((Bitmap) extras.get("data"));
-                break;
-            default:
-                break;
+                    case IMAGE_ACTION_CODE :
+                        Bundle extras = data.getExtras();
+                        ((ImageView) findViewById(R.id.imagePreview)).setImageBitmap((Bitmap) extras.get("data"));
+                        break;
+                    case VIDEO_ACTION_CODE :
+                        VideoView videoView = ((VideoView) findViewById(R.id.videoPreview));
+                        videoView.setVideoURI(data.getData());
+                        videoView.setMediaController(new MediaController(this));
+                        videoView.requestFocus();
+                        videoView.start();
+                        break;
+                    default:
+                        break;
         }
     }
 }

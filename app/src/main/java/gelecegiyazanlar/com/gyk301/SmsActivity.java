@@ -2,11 +2,12 @@ package gelecegiyazanlar.com.gyk301;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SmsActivity extends AppCompatActivity {
 
@@ -27,7 +28,13 @@ public class SmsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String message = senderMessage.getText().toString();
                 String phoneNumber = receiverNumber.getText().toString();
-                composeMmsMessage(message,phoneNumber);
+
+                if (message.equals("") || phoneNumber.length() < 10 ||
+                        phoneNumber.length() > 11) {
+                    Toast.makeText(SmsActivity.this, "Kontrol Ediniz ",
+                            Toast.LENGTH_SHORT).show();
+                } else
+                    composeMmsMessage(message, phoneNumber);
 
             }
         });

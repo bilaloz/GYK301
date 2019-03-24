@@ -100,6 +100,13 @@
 
         </LinearLayout>
 
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/about"
+            android:text="DEVAMSIZLIK"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 

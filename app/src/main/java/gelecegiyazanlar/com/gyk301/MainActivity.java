@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button openWeb;
     Button dialCall;
     Button sendSms;
+    Button about;
 
 
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialCall.setOnClickListener(this);
         sendSms = (Button) findViewById(R.id.send_sms);
         sendSms.setOnClickListener(this);
+        about = findViewById(R.id.about);
+        about.setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if(view == sendSms) {
             Intent smsIntent = new Intent(MainActivity.this,SmsActivity.class);
             startActivity(smsIntent);
+        }
+        else if (view==about){
+            Intent about = new Intent(MainActivity.this,UserAbout.class);
+            startActivity(about);
         }
     }
 }

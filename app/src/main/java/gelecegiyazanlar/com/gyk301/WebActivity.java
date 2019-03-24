@@ -31,19 +31,24 @@ public class WebActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);
 
-        final ProgressDialog progress = ProgressDialog.show(this, "Geleceği Yazanlar", "Yükleniyor....", true);
+        final ProgressDialog progress = ProgressDialog.show
+
+                (this, "Geleceği Yazanlar",
+                        "Yükleniyor....", true);
         progress.show();
         webView.setWebViewClient(new WebViewClient() {
 
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                Toast.makeText(getApplicationContext(), "Sayfa yüklendi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Sayfa yüklendi"
+                        , Toast.LENGTH_SHORT).show();
                 progress.dismiss();
             }
 
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(getApplicationContext(), "Bir hata oluştu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),
+                        "Bir hata oluştu", Toast.LENGTH_SHORT).show();
                 progress.dismiss();
             }
         });
