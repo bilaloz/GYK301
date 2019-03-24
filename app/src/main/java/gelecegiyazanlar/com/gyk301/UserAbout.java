@@ -2,6 +2,8 @@ package gelecegiyazanlar.com.gyk301;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -29,6 +31,14 @@ public class UserAbout extends AppCompatActivity {
         users.add(new Users("Bİlal","0020",R.drawable.ic_account_box_black_24dp,devamsizlik));
 
         Adapter adapter = new Adapter(this,users);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                users.remove(position);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
         listView.setAdapter(adapter);
 
 

@@ -1,7 +1,6 @@
 package gelecegiyazanlar.com.gyk301;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Users {
     String name;

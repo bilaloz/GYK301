@@ -43,6 +43,8 @@ public class Adapter extends BaseAdapter {
         TextView weekFo = view.findViewById(R.id.weekFo);
         ImageView userImage = view.findViewById(R.id.userImage);
 
+
+
         userName.setText(usersArrayList.get(position).getName());
         userTelep.setText(usersArrayList.get(position).getTelephone());
         userImage.setImageResource(usersArrayList.get(position).getImage());
@@ -50,6 +52,9 @@ public class Adapter extends BaseAdapter {
         weekTh.setText(usersArrayList.get(position).getAbout().get(2));
         weekTw.setText(usersArrayList.get(position).getAbout().get(1));
         weekOne.setText(usersArrayList.get(position).getAbout().get(0));
+
+
+
 
 
 
